@@ -4,5 +4,3 @@
 ## veja o site aqui. 
 https://pabloquirino.github.io/spotify-clone/src/
 
-## capturas de tela.
-![captura de tela do site inicial do spotify.]()
