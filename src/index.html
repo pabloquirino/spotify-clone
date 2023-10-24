@@ -13,7 +13,7 @@
         <div class="flex fixed bg-black w-full px-3 md:px-20 py-4"><!--header-black-->
 
             <div class="container flex items-center mx-auto"> <!--centralizar-->
-                <div> <!--logo-->
+                <div id="logo-spotify"> <!--logo-->
                     <a href="#">
                         <img src="img/spotify-logo.png" alt="logo-spotify" class="w-20 md:w-125px"> 
                     </a>
@@ -25,7 +25,7 @@
     
                 <div id="menu" class="items-end flex-1 hidden md:flex text-white font-bold"> <!--navbar-->
                     <nav class="flex-1">
-                        <ul class="block md:flex justify-end flex-1">
+                        <ul class="flex justify-end flex-1">
                             <li class="px-4">
                                 <a href="#" class="hover:text-hoverspt text-sm">Premium</a>
                             </li>
@@ -168,22 +168,25 @@
     <script>
         let menu = window.document.querySelector('#menu')
         let span = window.document.querySelector('#span-hidden')
+        let logo = window.document.querySelector('#logo-spotify')
 
         function tamanho() {
             if (window.innerWidth <= 768) {
-                menu.style.display = 'none'
+                menu.style.display = 'none' //se for mobile, o menu estará escondido
             } else {
-                menu.style.display = 'flex'
-                span.style.display = 'block'
+                menu.style.display = 'flex' // desktop, menu aparece
+                logo.style.display = 'block' // desktop, logo aparece
             }
         }
 
         function clicar() {
             if (menu.style.display == 'none') {
-                menu.style.display = 'block'
-                span.style.display = 'none'
+                menu.style.display = 'block' //se menu escondido e clicar, menu aparece
+                logo.style.display = 'none' //se menu escondido e clicar, o logo some
+
             } else {
-                menu.style.display = 'none'
+                menu.style.display = 'none' // menu for block e clicar, esconder menu
+                logo.style.display = 'block' // menu for block e clicar, aparece logo
             }
         }
     </script>
