@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/output.css">
     <link rel="shortcut icon" href="img/favicon-spotify.ico" type="image/x-icon">
 </head>
-<body>
+<body onresize="tamanho()">
     <header>
         <div class="flex fixed bg-black w-full px-3 md:px-20 py-4"><!--header-black-->
 
@@ -20,12 +20,12 @@
                 </div>
     
                 <div class="flex justify-end flex-1  md:hidden text-white text-3xl"> <!--icon-->
-                    <i class="fas fa-bars"></i>
+                    <button onclick="clicar()"><i class="fas fa-bars"></i></button>
                 </div>
     
-                <div class="items-end flex-1 hidden md:flex text-white font-bold"> <!--navbar-->
+                <div id="menu" class="items-end flex-1 hidden md:flex text-white font-bold"> <!--navbar-->
                     <nav class="flex-1">
-                        <ul class="flex justify-end flex-1">
+                        <ul class="block md:flex justify-end flex-1">
                             <li class="px-4">
                                 <a href="#" class="hover:text-hoverspt text-sm">Premium</a>
                             </li>
@@ -38,7 +38,7 @@
                                 <a href="#" class="hover:text-hoverspt text-sm">Baixar</a>
                             </li>
     
-                            <li class="px-4">
+                            <li id="span-hidden" class="px-4">
                                 <span class="border-r"></span>
                             </li>
     
@@ -164,5 +164,28 @@
 
         </div>
     </footer>
+
+    <script>
+        let menu = window.document.querySelector('#menu')
+        let span = window.document.querySelector('#span-hidden')
+
+        function tamanho() {
+            if (window.innerWidth <= 768) {
+                menu.style.display = 'none'
+            } else {
+                menu.style.display = 'flex'
+                span.style.display = 'block'
+            }
+        }
+
+        function clicar() {
+            if (menu.style.display == 'none') {
+                menu.style.display = 'block'
+                span.style.display = 'none'
+            } else {
+                menu.style.display = 'none'
+            }
+        }
+    </script>
 </body>
 </html>
