@@ -1,6 +1,6 @@
 # clone-spotify
  clone do spotify 2020, utilizando tailwindcss
  
-## veja o site aqui. 
+_veja o site aqui:_
 https://pabloquirino.github.io/spotify-clone/src/
 
